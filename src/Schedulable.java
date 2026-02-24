@@ -1,0 +1,3 @@
+interface Schedulable {
+    void schedule();
+}
