@@ -2,15 +2,38 @@ public class HospitalMain {
 
     public static void main(String[] args) {
 
-        Patient patient = new Patient("Sakshi", 12);
-        Doctor doctor = new Doctor("Mehta");
-        Billing bill = new Billing(1500);
+        java.util.Scanner sc = new java.util.Scanner(System.in);
 
-        patient.showDetails();
-        patient.schedule();
+        try {
+            // input
+            System.out.print("Enter Patient Name: ");
+            String pName = sc.nextLine();
 
-        doctor.work();
+            System.out.print("Enter Room Number: ");
+            int room = sc.nextInt();
+            sc.nextLine();
 
-        bill.showBill();
+            System.out.print("Enter Doctor Name: ");
+            String dName = sc.nextLine();
+
+            System.out.print("Enter Bill Amount: ");
+            double amount = sc.nextDouble();
+
+            // objects
+            Patient patient = new Patient(pName, room);
+            Doctor doctor = new Doctor(dName);
+            Billing bill = new Billing(amount);
+
+            // output
+            patient.showDetails();
+            patient.schedule();
+            doctor.work();
+            bill.showBill();
+
+        } catch (Exception e) {
+            System.out.println("Error: Invalid input. Try again.");
+        } finally {
+            sc.close();
+        }
     }
 }
