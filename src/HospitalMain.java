@@ -7,14 +7,23 @@ public class HospitalMain {
         try {
             // input
             System.out.print("Enter Patient Name: ");
-            String pName = sc.nextLine();
+String pName = sc.nextLine();
+
+// check: only letters and spaces
+if (!pName.matches("[a-zA-Z ]+")) {
+    throw new Exception("Name must contain only letters!");
+}
 
             System.out.print("Enter Room Number: ");
             int room = sc.nextInt();
             sc.nextLine();
 
             System.out.print("Enter Doctor Name: ");
-            String dName = sc.nextLine();
+String dName = sc.nextLine();
+
+if (!dName.matches("[a-zA-Z ]+")) {
+    throw new Exception("Invalid Doctor Name! Only letters allowed.");
+}
 
             System.out.print("Enter Bill Amount: ");
             double amount = sc.nextDouble();
