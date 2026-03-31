@@ -15,4 +15,7 @@ class Patient extends Person implements Schedulable {
     public void showDetails() {
         System.out.println("Patient: " + getName() + ", Room: " + roomNo);
     }
+    public int getRoomNo() {
+    return roomNo;
+}
 }
